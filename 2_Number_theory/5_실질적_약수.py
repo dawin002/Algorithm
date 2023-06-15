@@ -41,7 +41,23 @@ def csod_1():
     # print(arr)
     print(ans)
 
-csod_1()
+# csod_1()
+
+
+""" answer solution """
+
+def csod_2():
+    n = int(input())
+    sum = 0
+    i = 2
+    while i <= n//2:
+        k = n // i
+        b = n // k
+        c = (k-1) * (b-i+1) * (i+b) // 2
+        sum = (sum + c) % 1_000_000
+        i = b + 1
+    print(sum)
+csod_2()
 
 # 1
 # 2
