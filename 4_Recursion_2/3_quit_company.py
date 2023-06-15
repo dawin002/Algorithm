@@ -3,9 +3,8 @@ def recur(date, money):
     global maxi
 
     if date >= n:
-        if date > n:
-            return
-        maxi = max(maxi, money)
+        if date == n:
+            maxi = max(maxi, money)
         return
 
     recur(date + arr[date][0], money + arr[date][1])
