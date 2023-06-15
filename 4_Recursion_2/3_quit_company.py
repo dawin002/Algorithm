@@ -1,17 +1,19 @@
-n = int(input())
-arr = [list(map(int, input().split())) for _ in range(n)]
-maxi = 0
 
 def recur(date, money):
-    if date > n:
-        return
-    if date == n:
-        global maxi
+    global maxi
+
+    if date >= n:
+        if date > n:
+            return
         maxi = max(maxi, money)
         return
 
     recur(date + arr[date][0], money + arr[date][1])
     recur(date + 1, money)
+
+n = int(input())
+arr = [list(map(int, input().split())) for _ in range(n)]
+maxi = 0
 
 recur(0, 0)
 
