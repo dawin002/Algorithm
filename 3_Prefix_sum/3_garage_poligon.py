@@ -90,6 +90,7 @@ def garage_3():
     pre_l = 0
     for l, h in arr:
         sumi += height * (l - pre_l)
+        pre_l = l
         if h == max_h:
             first_max_pos = l
             break
@@ -100,6 +101,7 @@ def garage_3():
     pre_l = 1001
     for l, h in arr[::-1]:
         sumi += height * (pre_l - l)
+        pre_l = l
         if h == max_h:
             last_max_pos = l
             break
