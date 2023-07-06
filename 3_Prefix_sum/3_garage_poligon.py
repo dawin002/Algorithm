@@ -1,33 +1,3 @@
-
-def garage_1():
-    n = int(input())
-    max_h = 0
-    arr = []
-    for _ in range(n):
-        l, h = map(int, input().split())
-        max_h = max(max_h, h)
-        arr.append((l, h))
-
-    arr.sort()
-    print(arr)
-
-    first_max_h_pos = -1
-    last_max_h_pos = -1
-    answer = 0
-    pre_l, pre_h = arr[0]
-
-    if pre_h == max_h:
-        first_max_h_pos = 0
-    else:
-        for i in range(1, n):
-            l, h = arr[i]
-            answer += (pre_l - l) * pre_h
-            if h == max_h:
-                first_max_h_pos = l
-                break
-            arr[i]
-
-
 def garage_2():
     n = int(input())
     arr = [0 for _ in range(1003)]
@@ -112,5 +82,5 @@ def garage_3():
 
     print(sumi)
 
-garage_3()
+# garage_3()
 
