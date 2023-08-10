@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg949\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset129 AppleSDGothicNeo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14360\viewh9980\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf0 \
+\
+from bisect import \'a1\'a6\
+	\'c0\'cc\'c1\'f8\'c5\'bd\'bb\'f6 bisect \'b6\'f3\'c0\'cc\'ba\'ea\'b7\'af\'b8\'ae import \'c7\'d8\'be\'df \'bb\'e7\'bf\'eb \'b0\'a1\'b4\'c9\
+	\'b8\'ae\'bd\'ba\'c6\'ae\'b0\'a1 \'c1\'a4\'b7\'c4 \'b5\'c8 \'bb\'f3\'c5\'c2\'bf\'a1\'bc\'ad\'b8\'b8 \'bb\'e7\'bf\'eb \'b0\'a1\'b4\'c9\
+\
+bisect_left()\
+	from bisect import bisect_left\
+	bisect_left(arr, data)\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr\'bf\'a1\'bc\'ad \'b5\'a5\'c0\'cc\'c5\'cd x\'b8\'a6 \'bb\'f0\'c0\'d4\'c7\'d2 \'b0\'a1\'c0\'e5 \'bf\'de\'c2\'ca \'c0\'ce\'b5\'a6\'bd\'ba(\'c3\'b9\'b9\'f8\'c2\'b0 x \'bf\'f8\'bc\'d2 \'c0\'ce\'b5\'a6\'bd\'ba) \'c0\'cc\'c1\'f8 \'c5\'bd\'bb\'f6\'c0\'b8\'b7\'ce \'c3\'a3\'be\'c6\'bc\'ad \'b9\'dd\'c8\'af\
+\
+bisect_right()\
+	from bisect import bisect_right\
+	bisect_right(arr, data)\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr\'bf\'a1\'bc\'ad \'b5\'a5\'c0\'cc\'c5\'cd x\'b8\'a6 \'bb\'f0\'c0\'d4\'c7\'d2 \'b0\'a1\'c0\'e5 \'bf\'c0\'b8\'a5\'c2\'ca \'c0\'ce\'b5\'a6\'bd\'ba(\'b8\'b6\'c1\'f6\'b8\'b7 x \'bf\'f8\'bc\'d2 \'b4\'d9\'c0\'bd \'c0\'ce\'b5\'a6\'bd\'ba) \'c0\'cc\'c1\'f8 \'c5\'bd\'bb\'f6\'c0\'b8\'b7\'ce \'c3\'a3\'be\'c6\'bc\'ad \'b9\'dd\'c8\'af\
+\
+\'bb\'e7\'bf\'eb \'bf\'b9\'bd\'c3\
+	from bisect import bisect_left, bisect_right\
+	arr = [1, 4, 4, 6]\
+	data = 4 \
+	idx_left = bisect_left(arr, data)     # \uc0\u8212 > idx_left == 1    (\'b0\'a1\'c0\'e5 \'bf\'de\'c2\'ca 4 \'bf\'f8\'bc\'d2\'c0\'c7 \'c0\'ce\'b5\'a6\'bd\'ba \'b9\'dd\'c8\'af)\
+	idx_right = bisect_right(arr, data) # \uc0\u8212 > idx_right == 3 (\'b0\'a1\'c0\'e5 \'bf\'c0\'b8\'a5\'c2\'ca 4 \'bf\'f8\'bc\'d2\'c0\'c7 \'b4\'d9\'c0\'bd \'c0\'ce\'b5\'a6\'bd\'ba \'b9\'dd\'c8\'af)\
+\
+count_by_range() : \'bb\'e7\'bf\'eb\'c0\'da\'c7\'d4\'bc\'f6!!!!\
+	\'c1\'a4\'b7\'c4\'b5\'c8 \'b8\'ae\'bd\'ba\'c6\'ae\'bf\'a1\'bc\'ad \'b0\'aa\'c0\'cc data\'c0\'ce \'bf\'f8\'bc\'d2 \'b0\'b3\'bc\'f6 \'b9\'dd\'c8\'af\
+	( arr.count(data) \'b4\'c2 O(N) \'bd\'c3\'b0\'a3\'ba\'b9\'c0\'e2\'b5\'b5. O(logN) \'bd\'c3\'b0\'a3\'ba\'b9\'c0\'e2\'b5\'b5\'b7\'ce \'c7\'ae\'be\'ee\'be\'df \'c7\'d2 \'b6\'a7 \'bb\'e7\'bf\'eb )\
+\
+	from bisect import bisect_left, bisect_right\
+	def count_by_range(arr, left_val, right_val):\
+		left_idx = bisect(arr, left_val)\
+		right_idx = bisect(arr, right_val)\
+		return right_idx - left_idx\
+\
+	# \'c1\'a4\'b7\'c4\'b5\'c8 \'b8\'ae\'bd\'ba\'c6\'ae arr\'bf\'a1\'bc\'ad data\'c0\'c7 \'b0\'b3\'bc\'f6\
+	num_of_data = count_by_range(arr, data, data)\
+\
+	# \'c1\'a4\'b7\'c4\'b5\'c8 \'b8\'ae\'bd\'ba\'c6\'ae arr\'bf\'a1\'bc\'ad data1\'ba\'ce\'c5\'cd data2\'b1\'ee\'c1\'f6\'c0\'c7 \'bf\'f8\'bc\'d2 \'b0\'b3\'bc\'f6(data1, data2 \'c6\'f7\'c7\'d4)\
+	num_of_data1_to_data2 = count_by_range(arr, data1, data2)\
+}

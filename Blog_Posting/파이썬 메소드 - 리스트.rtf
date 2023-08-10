@@ -1,0 +1,81 @@
+{\rtf1\ansi\ansicpg949\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset129 AppleSDGothicNeo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14360\viewh9980\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf0 \
+append()\
+	arr.append(data)\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr\'c0\'c7 \'bf\'de\'c2\'ca \'b3\'a1\'bf\'a1 \'b0\'aa data \'c3\'df\'b0\'a1\
+	\'bd\'c3\'b0\'a3\'ba\'b9\'c0\'e2\'b5\'b5 O(1)\
+\
+insert()\
+	arr.insert(idx, data)\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr\'c0\'c7 \'c0\'ce\'b5\'a6\'bd\'ba idx\'bf\'a1 \'b0\'aa data \'bb\'f0\'c0\'d4\
+	\'bd\'c3\'b0\'a3\'ba\'b9\'c0\'e2\'b5\'b5 O(N)\
+\
+extend()\
+	arr1.extend(arr2)\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr1\'c0\'c7 \'bf\'de\'c2\'ca \'b3\'a1\'bf\'a1 \'b8\'ae\'bd\'ba\'c6\'ae arr2 \'c0\'cc\'be\'ee\'ba\'d9\'c0\'cc\'b1\'e2\
+	+ \'bf\'ac\'bb\'ea\'c0\'da \'bb\'e7\'bf\'eb\'c7\'d8\'b5\'b5 \'b5\'bf\'c0\'cf \'c8\'bf\'b0\'fa\
+	\'bd\'c3\'b0\'a3\'ba\'b9\'c0\'e2\'b5\'b5 O(len(arr2))\
+\
+index()\
+	arr.index(data)\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr\'bf\'a1\'bc\'ad \'c6\'af\'c1\'a4 \'b0\'aa data\'b8\'a6 \'b0\'a1\'c1\'f6\'b4\'c2 \'c3\'b9 \'b9\'f8\'c2\'b0 \'bf\'f8\'bc\'d2\'c0\'c7 \'c0\'ce\'b5\'a6\'bd\'ba \'b9\'dd\'c8\'af\'c7\'cf\'b1\'e2\
+	(\'c1\'d6\'c0\'c7 : \'c7\'d8\'b4\'e7 \'b0\'aa \'be\'f8\'c0\'b8\'b8\'e9 ValueError. -1 \'b9\'dd\'c8\'af \'be\'c6\'b4\'d4 \uc0\u8212 > \'b9\'dd\'ba\'b9\'b9\'ae\'bf\'a1 \'b3\'d6\'b0\'ed \'b5\'b9\'b8\'ae\'b1\'e2\'bf\'a3 \'bf\'a1\'b7\'af \'b6\'a7\'b9\'ae\'bf\'a1 \'bb\'e7\'bf\'eb\'c7\'cf\'b1\'e2 \'be\'ee\'b7\'c1\'bf\'ef \'b5\'ed)\
+	(\'c7\'cf\'c1\'f6\'b8\'b8, \'b9\'ab\'c1\'b6\'b0\'c7 \'b1\'d7 \'b0\'aa\'c0\'cc \'c0\'d6\'b4\'c2 arr.index(max(arr)) \'c0\'cc\'b7\'b1\'b0\'c7 \'be\'b5 \'bc\'f6 \'c0\'d6\'c0\'bb \'b5\'ed)\
+\
+rindex()\
+	arr.rindex(data)\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr\'bf\'a1\'bc\'ad \'c6\'af\'c1\'a4 \'b0\'aa data\'b8\'a6 \'b0\'a1\'c1\'f6\'b4\'c2 \'b0\'a1\'c0\'e5 \'b3\'a1 \'bf\'f8\'bc\'d2\'c0\'c7 \'c0\'ce\'b5\'a6\'bd\'ba \'b9\'dd\'c8\'af\'c7\'cf\'b1\'e2\
+	\
+count()\
+	arr.count(data)\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr\'c0\'c7 \'c6\'af\'c1\'a4 \'b0\'aa data\'b0\'a1 \'b8\'ee \'b0\'b3 \'c0\'d6\'b4\'c2\'c1\'f6 \'b9\'dd\'c8\'af\
+	\'bd\'c3\'b0\'a3\'ba\'b9\'c0\'e2\'b5\'b5 O(N)\
+\
+remove()\
+	arr.remove(data)\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr\'bf\'a1\'bc\'ad \'c6\'af\'c1\'a4 \'b0\'aa data\'b8\'a6 \'b0\'ae\'b4\'c2 \'bf\'f8\'bc\'d2 \'c1\'a6\'b0\'c5 (\'c3\'b9 \'b9\'f8\'c2\'b0\'b7\'ce \'b9\'df\'b0\'df\'b5\'c8 \'bf\'f8\'bc\'d2 \'c7\'cf\'b3\'aa\'b8\'b8 \'c1\'a6\'b0\'c5)\
+	\'bd\'c3\'b0\'a3\'ba\'b9\'c0\'e2\'b5\'b5 O(N)\
+\
+** remove_all() \'b1\'b8\'c7\'f6\
+	\'b8\'ae\'bd\'ba\'c6\'ae\'bf\'a1\'bc\'ad \'c6\'af\'c1\'a4 \'b0\'aa(\'b5\'e9) \'b8\'f0\'b5\'ce \'c1\'a6\'b0\'c5\'c7\'cf\'b1\'e2\
+	def remove_all(arr, data):\
+		remove_set = \{data\}\
+		# remove_set = set(data_list) #  \'b0\'aa\'b5\'e9 \'c1\'a6\'b0\'c5\'c7\'cf\'b7\'c1\'b8\'e9 \'b8\'ae\'bd\'ba\'c6\'ae\'b7\'ce \'b9\'de\'be\'c6\'bc\'ad set\'c0\'b8\'b7\'ce \'b8\'b8\'b5\'e9\'b1\'e2\
+		result = [a for a in arr if a not in remove_set]\
+		return result\
+	arr = remove_all(arr, data)\
+	\'bd\'c3\'b0\'a3\'ba\'b9\'c0\'e2\'b5\'b5 O(N) \'bf\'b9\'bb\'f3\
+\
+clear()\
+	arr.clear()\
+	\'b8\'ae\'bd\'ba\'c6\'ae\'c0\'c7 \'b8\'f0\'b5\'e7 \'bf\'f8\'bc\'d2 \'c1\'a6\'b0\'c5\
+\
+sort()\
+	arr.sort()\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr\'c0\'bb \'c1\'a4\'b7\'c4 (\'b1\'e2\'ba\'bb : \'bf\'c0\'b8\'a7\'c2\'f7\'bc\'f8, 2\'c2\'f7\'bf\'f8 \'b9\'e8\'bf\'ad\'c0\'cc\'b8\'e9 \'c3\'b9\'b9\'f8\'c2\'b0 \'bf\'f8\'bc\'d2 \'b1\'e2\'c1\'d8)\
+	\'bd\'c3\'b0\'a3\'ba\'b9\'c0\'e2\'b5\'b5 O(NlogN)\
+	options :\
+		reverse=True : \'b3\'bb\'b8\'b2\'c2\'f7\'bc\'f8\'c0\'b8\'b7\'ce \'c1\'a4\'b7\'c4\
+		key=lambda x: x[0] : \'bf\'f8\'bc\'d2 x\'c0\'c7 x[0] \'bf\'f8\'c0\'da\'b8\'a6 \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c1\'a4\'b7\'c4\
+		key=lambda x: (x[0], x[1]) : \'bf\'f8\'bc\'d2 x\'c0\'c7 x[0]\'c0\'bb \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce, \'b0\'b0\'c0\'b8\'b8\'e9 x[1]\'c0\'bb \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'c1\'a4\'b7\'c4\
+		key=lambda x: (-x[0], x[1]) : \'bf\'f8\'bc\'d2 x\'c0\'c7 x[0]\'c0\'bb \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'b3\'bb\'b8\'b2\'c2\'f7\'bc\'f8, x[1]\'c0\'bb \'b1\'e2\'c1\'d8\'c0\'b8\'b7\'ce \'bf\'c0\'b8\'a7\'c2\'f7\'bc\'f8 \'c1\'a4\'b7\'c4\
+\
+reverse()\
+	arr.reverse()\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr\'c0\'c7 \'bf\'f8\'bc\'d2 \'bc\'f8\'bc\'ad \'b8\'f0\'b5\'ce \'b5\'da\'c1\'fd\'b1\'e2\
+	\'b8\'ae\'bd\'ba\'c6\'ae \'bf\'f8\'ba\'bb\'c0\'cc \'bc\'f6\'c1\'a4\'b5\'ca, \'b9\'dd\'c8\'af\'b0\'aa \'be\'f8\'c0\'bd\
+	\'bd\'c3\'b0\'a3\'ba\'b9\'c0\'e2\'b5\'b5 O(N)\
+\
+reversed()\
+	reversed(arr)\
+	\'b8\'ae\'bd\'ba\'c6\'ae arr\'c0\'c7 \'bf\'f8\'bc\'d2 \'bc\'f8\'bc\'ad \'b8\'f0\'b5\'ce \'b5\'da\'c1\'fd\'c0\'ba \'b8\'ae\'bd\'ba\'c6\'ae\'b8\'a6 \'b9\'dd\'c8\'af\
+	\'b8\'ae\'bd\'ba\'c6\'ae \'bf\'f8\'ba\'bb \'bc\'f6\'c1\'a4 \'be\'c8\'b5\'ca, \'b5\'da\'c1\'fd\'c8\'f9 \'b8\'ae\'bd\'ba\'c6\'ae\'b8\'a6 \'b9\'dd\'c8\'af\
+	\'bd\'c3\'b0\'a3\'ba\'b9\'c0\'e2\'b5\'b5 O(N)\
+\
+}
